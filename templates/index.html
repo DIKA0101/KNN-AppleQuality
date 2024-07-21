@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple Quality Prediction</title>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <div class="container contact-form">
+      <div class="contact-image">
+        <img src="/static/apple.png" alt="rocket_contact" />
+      </div>
+      <form action="/predict" method="post">
+        <h4>Klasifikasi Kualitas Apel</h4>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="form-group">
+              <input
+                type="text"
+                name="Size"
+                class="form-control"
+                placeholder="Size"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="Weight"
+                class="form-control"
+                placeholder="Weight"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="Sweetness"
+                class="form-control"
+                placeholder="Sweetness"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="Crunchiness"
+                class="form-control"
+                placeholder="Crunchiness"
+                required
+              />
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <input
+                type="text"
+                name="Juiciness"
+                class="form-control"
+                placeholder="Juiciness"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="Ripeness"
+                class="form-control"
+                placeholder="Ripeness"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="Acidity"
+                class="form-control"
+                placeholder="Acidity"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="submit"
+                value="Predict"
+                class="btn btn-primary btn-block btn-large btn-predict"
+              />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <h4>Hasil Prediksi: {{ prediction_text }}</h4>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
+</html>
