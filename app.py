@@ -2,8 +2,14 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 import numpy as np
 
-with open('model\knn_applequality_model.pkl', 'rb') as file:
+import os
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(base_dir, 'model', 'knn_applequality_model.pkl')
+
+with open(model_path, 'rb') as file:
     knn_model = pickle.load(file)
+
 
 # install flask
 app = Flask(__name__)
